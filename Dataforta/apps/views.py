@@ -1,12 +1,13 @@
-from django.shortcuts import redirect, render
-
+from django.shortcuts import redirect
 # Create your views here.
 from django.views.generic import TemplateView
+from django.contrib import messages
 from . import forms
 
 
 class HomePageView(TemplateView):
     template_name = "index.html"
+
 
     def post(self, request, *args, **kwargs):
      
@@ -14,7 +15,8 @@ class HomePageView(TemplateView):
 
         if user_form.is_valid():
             user_form.save()
-        
+
+            messages.success(request, 'Contact request submitted successfully.')
             return redirect('index')
 
 

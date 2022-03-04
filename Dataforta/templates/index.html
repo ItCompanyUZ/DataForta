@@ -41,6 +41,10 @@
   </head>
 <body>
    
+  {% include 'messages.html' %}
+
+
+
   <div id="progressbar"></div>
   <div id="scrollPath"></div>
 
@@ -65,7 +69,7 @@
       </div>
     </div>
   </header>
-  
+
   <!-- ======= Hero Section ======= -->
   <section style="background: url({% static 'assets/img/testimonials-bg.jpg' %});" id="hero" class="d-flex align-items-center text-center">
     <div class="container" data-aos="fade-up" data-aos="fade-left">
@@ -308,22 +312,10 @@
 
           </div>
 
-
-
-
-          
-
-
-
-
-
-
-
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
 
-            <!-- <form action=""  method="post" class="php-email-form">
+            <form action="" method="post">
               {% csrf_token %}
-              {{ form }}
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
@@ -338,26 +330,9 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="text" rows="5" placeholder="Сообщение" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Загрузка</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
-              </div>
-              <div class="text-center"><button type="submit">Отправить</button></div>
-            </form> -->
-
-
-            <form action="" method="post">
-              {% csrf_token %}
-              {{ form }}
-          
-              <input type="submit">
+              <div class="text-center"><button type="submit" class="btn btn-outline-secondary">Отправить</button></div>
+            
             </form>
-
-
-
-
-
           </div>
 
         </div>
@@ -447,6 +422,13 @@
   </script>
 
   <script>
+
+    setTimeout(function(){
+          if ($('#msg').length > 0) {
+            $('#msg').remove();
+          }
+        }, 2000)
+
     let a = document.getElementById('callbig').style.display = 'none';
 
     function myf2() {
