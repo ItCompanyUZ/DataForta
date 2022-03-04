@@ -10,3 +10,5 @@ class ContactForm(ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'theme', 'email', 'text']
+
+        

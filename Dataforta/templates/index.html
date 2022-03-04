@@ -308,9 +308,22 @@
 
           </div>
 
+
+
+
+          
+
+
+
+
+
+
+
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
 
-            <form action="" method="post" role="form" class="php-email-form">
+            <!-- <form action=""  method="post" class="php-email-form">
+              {% csrf_token %}
+              {{ form }}
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
@@ -331,7 +344,19 @@
                 <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
               </div>
               <div class="text-center"><button type="submit">Отправить</button></div>
+            </form> -->
+
+
+            <form action="" method="post">
+              {% csrf_token %}
+              {{ form }}
+          
+              <input type="submit">
             </form>
+
+
+
+
 
           </div>
 
