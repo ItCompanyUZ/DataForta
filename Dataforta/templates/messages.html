@@ -1,11 +1,15 @@
 
 
-{% if messages %}
-{% for message in messages %}
-    <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
-        {{ message }}
-    </div>
-{% endfor %}
-{% endif %} 
 
+<!--<h1>muafaqiyatli yakunlandi raxmat tez orada siz bilan bog'lanishadi</h1>-->
+<!--<button><a href="/">bosh saxifaga qaytish</a></button>-->
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+    <button><a href="/">bosh saxifaga qaytish</a></button>
+</ul>
+{% endif %}
 
